@@ -8,12 +8,14 @@
         <span class='icon-bar'></span>
       </button>
 
-      <a class='navbar-brand' href='#'>Kit</a>
+      <%= link_to '/', class: 'navbar-brand' do %>
+        <%= image_tag 'kit_logo_navbar' %>
+      <% end %>
     </div>
 
     <div class='collapse navbar-collapse' id='navbar-collapse'>
-      <form class='navbar-form navbar-left'>
-        <div class='input-group'>
+      <form class='navbar-form navbar-left kit-search-form'>
+        <div class='input-group search-input-group'>
           <input type='text' class='form-control' placeholder='Search'>
 
           <span class='input-group-btn'>
@@ -23,9 +25,9 @@
       </form>
 
       <ul class='nav navbar-nav navbar-right'>
-        <li><a href='#'><span class='glyphicon glyphicon-search' aria-hidden='true'></span></a></li>
-        <li><a href='#'><span class='glyphicon glyphicon-inbox' aria-hidden='true'></span></a></li>
-        <li><a href='#'><span class='glyphicon glyphicon-envelope' aria-hidden='true'></span></a></li>
+        <li class='kit-navbar-icons'><a href='/discover' title='Discover'><span class='glyphicon glyphicon-search' aria-hidden='true'></span></a></li>
+        <li class='kit-navbar-icons'><a href='#' title='Subscriptions'><span class='glyphicon glyphicon-inbox' aria-hidden='true'></span></a></li>
+        <li class='kit-navbar-icons'><a href='#' title='Inbox'><span class='glyphicon glyphicon-envelope' aria-hidden='true'></span></a></li>
       </ul>
     </div>
   </div>

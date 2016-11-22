@@ -1,0 +1,26 @@
+// Styles for the navbar
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+  display: inline-block;
+}
+
+.kit-navbar-icons {
+  font-size: 1.25em;
+}
+
+@media screen and (min-width: $screen-sm) {
+  .kit-search-form {
+    width: 450px;
+    max-width: 100%;
+
+    .search-input-group {
+      width: 100%;
+    }
+  }
+}

@@ -4,12 +4,12 @@
   <div class='col-md-7'>
     <div class='panel panel-default'>
       <div class='panel-body'>
-        <%= image_tag 'creators/' + @creator.avatar, width: 100, class: 'media-object img-circle pull-left', style: 'margin-right: 15px' %>
+        <img src='http://placehold.it/100x100' class='media-object img-circle pull-left' style='margin-right: 15px'>
 
         <div>
-          <h3 style='margin: 0 0 10px'><%= @creator.name %></h3>
+          <h3 style='margin: 0 0 10px'>Creator Name</h3>
 
-          <p><%= @creator.bio %></p>
+          <p>Creator bio goes here: Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
         </div>
 
         <div style='clear:both'></div>
@@ -22,32 +22,39 @@
       </div>
 
       <div class='panel-body'>
-        <%
-          $i = 0
-
-          while $i < @videos.count
-        %>
-
-          <div class='row'>
-            <div class='col-md-6'>
-              <%= link_to '/video/' + @videos[$i].id.to_s do %>
-                <%= image_tag 'https://img.youtube.com/vi/' + @videos[$i].youtube_id + '/0.jpg', class: 'img-responsive' %>
-              <% end %>
-            </div>
-
-            <% if @videos[$i+1] %>
-              <div class='col-md-6'>
-                <%= link_to '/video/' + @videos[$i+1].id.to_s do %>
-                <%= image_tag 'https://img.youtube.com/vi/' + @videos[$i+1].youtube_id + '/0.jpg', class: 'img-responsive' %>
-              <% end %>
-              </div>
-            <% end %>
+        <div class='row'>
+          <div class='col-md-6'>
+            <img src='http://placehold.it/640x480' class='img-responsive' />
           </div>
 
-        <%
-            $i += 2
-          end
-        %>
+          <div class='col-md-6'>
+            <img src='http://placehold.it/640x480' class='img-responsive' />
+          </div>
+        </div>
+
+        <br/>
+
+        <div class='row'>
+          <div class='col-md-6'>
+            <img src='http://placehold.it/640x480' class='img-responsive' />
+          </div>
+
+          <div class='col-md-6'>
+            <img src='http://placehold.it/640x480' class='img-responsive' />
+          </div>
+        </div>
+
+        <br/>
+
+        <div class='row'>
+          <div class='col-md-6'>
+            <img src='http://placehold.it/640x480' class='img-responsive' />
+          </div>
+
+          <div class='col-md-6'>
+            <img src='http://placehold.it/640x480' class='img-responsive' />
+          </div>
+        </div>
       </div>
     </div>
   </div>
