@@ -1,24 +1,31 @@
 <nav class='navbar navbar-default navbar-fixed-top'>
   <div class='container'>
     <div class='navbar-header'>
+      <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-collapse' aria-expanded='false'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+
       <a class='navbar-brand' href='#'>Kit</a>
     </div>
 
-    <div>
+    <div class='collapse navbar-collapse' id='navbar-collapse'>
       <form class='navbar-form navbar-left'>
         <div class='input-group'>
           <input type='text' class='form-control' placeholder='Search'>
 
           <span class='input-group-btn'>
-            <button class='btn btn-default' type='button'>Search</button>
+            <button class='btn btn-default' type='button'><span class='glyphicon glyphicon-search' aria-hidden='true'></span></button>
           </span>
         </div>
       </form>
 
       <ul class='nav navbar-nav navbar-right'>
-        <li><a href='#'>Link</a></li>
-        <li><a href='#'>Link</a></li>
-        <li><a href='#'>Link</a></li>
+        <li><a href='#'><span class='glyphicon glyphicon-search' aria-hidden='true'></span></a></li>
+        <li><a href='#'><span class='glyphicon glyphicon-inbox' aria-hidden='true'></span></a></li>
+        <li><a href='#'><span class='glyphicon glyphicon-envelope' aria-hidden='true'></span></a></li>
       </ul>
     </div>
   </div>

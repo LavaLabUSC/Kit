@@ -1,4 +1,5 @@
 // Navbar
+$navbar-height: 65px;
 $navbar-default-bg: #b82761;
 $navbar-default-color: #ffffff;
 
@@ -6,3 +7,9 @@ $navbar-default-color: #ffffff;
 $navbar-default-link-color: #fff !default;
 $navbar-default-link-hover-color: #fff !default;
 $navbar-default-link-hover-bg: darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-active-color: #fff !default;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg: darken($navbar-default-bg, 13%) !default;
+$navbar-default-toggle-icon-bar-bg: #fff !default;
+$navbar-default-toggle-border-color: darken($navbar-default-bg, 13%) !default;
