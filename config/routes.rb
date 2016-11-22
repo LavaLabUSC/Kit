@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
+  get 'home' => 'dashboard#home'
+  get 'video/example_id' => 'videos#show'
+  get 'product/example_id' => 'products#show'
+  get 'creator/example_user' => 'creators#show'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
