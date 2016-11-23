@@ -1,0 +1,25 @@
+// Styles for the creator page
+.creator-video-post {
+  margin-top: 25px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:nth-child(2) {
+    margin-top: 0;
+  }
+}
+
+
+.creator-ig-post {
+  margin-top: 25px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:nth-child(2) {
+    margin-top: 0;
+  }
+}

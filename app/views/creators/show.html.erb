@@ -22,32 +22,15 @@
       </div>
 
       <div class='panel-body'>
-        <%
-          $i = 0
-
-          while $i < @videos.count
-        %>
-
-          <div class='row'>
-            <div class='col-md-6'>
-              <%= link_to '/video/' + @videos[$i].id.to_s do %>
-                <%= image_tag 'https://img.youtube.com/vi/' + @videos[$i].youtube_id + '/0.jpg', class: 'img-responsive' %>
+        <div class='row'>
+          <% @videos.each do |v| %>
+            <div class='col-md-6 creator-video-post'>
+              <%= link_to '/video/' + v.id.to_s do %>
+                <%= image_tag 'https://img.youtube.com/vi/' + v.youtube_id + '/0.jpg', class: 'img-responsive' %>
               <% end %>
             </div>
-
-            <% if @videos[$i+1] %>
-              <div class='col-md-6'>
-                <%= link_to '/video/' + @videos[$i+1].id.to_s do %>
-                <%= image_tag 'https://img.youtube.com/vi/' + @videos[$i+1].youtube_id + '/0.jpg', class: 'img-responsive' %>
-              <% end %>
-              </div>
-            <% end %>
-          </div>
-
-        <%
-            $i += 2
-          end
-        %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -60,25 +43,11 @@
 
       <div class='panel-body'>
         <div class='row'>
-          <div class='col-md-6'>
-            <img src='http://placehold.it/640x480' class='img-responsive' />
-          </div>
-
-          <div class='col-md-6'>
-            <img src='http://placehold.it/640x480' class='img-responsive' />
-          </div>
-        </div>
-
-        <br />
-
-        <div class='row'>
-          <div class='col-md-6'>
-            <img src='http://placehold.it/640x480' class='img-responsive' />
-          </div>
-
-          <div class='col-md-6'>
-            <img src='http://placehold.it/640x480' class='img-responsive' />
-          </div>
+          <% @instagram.each do |i| %>
+            <div class='col-md-6 creator-ig-post'>
+              <%= image_tag i, class: 'img-responsive' %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

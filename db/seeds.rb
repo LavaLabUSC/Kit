@@ -28,3 +28,31 @@ michelle_phan_vids = Video.create([
     creator: michelle_phan
   }
 ])
+
+sona_gasparian = Creator.create(
+  name: 'Sona Gasparian',
+  twitter: 'simply_sona',
+  instagram: 'simplysona',
+  youtube_id: 'MakeupBySona',
+  bio: 'My name is Sona Gasparian, I\'m a professional makeup artist turned Beauty and Fashion blogger/vlogger based in sunny Los Angeles!',
+  avatar: 'michelle_phan.jpg',
+  slug: 'makeupbysona'
+)
+
+sona_gasparian_vids = Video.create([
+  {
+    name: 'Golden Bronze Makeup Tutorial',
+    youtube_id: 'UAK_cOSR8bs',
+    creator: sona_gasparian
+  },
+  {
+    name: 'All Matte Fall Makeup',
+    youtube_id: 'I52vs0mIvYw',
+    creator: sona_gasparian
+  },
+  {
+    name: 'Glitter Glam Makeup',
+    youtube_id: '8hKFccRONOU',
+    creator: sona_gasparian
+  }
+])
