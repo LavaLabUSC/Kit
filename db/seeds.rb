@@ -29,13 +29,37 @@ michelle_phan_vids = Video.create([
   }
 ])
 
+michelle_phan_products = Product.create([
+  {
+    name: 'Illuminating Skin Filter',
+    url: 'http://amzn.to/1p7SFrB',
+    image: 'ill_skin_filter.png',
+    description: 'Use this lightweight fluid illuminator to create any special skin effect. Easily applies alone, under your foundation, or mix with face product to brighten your skin. Choose your effect to customize the \'mood\' you want to create.',
+    video: michelle_phan_vids[0]
+  },
+  {
+    name: 'Pillow Plush Cushiony Lip Balm',
+    url: 'http://amzn.to/WBP3rm',
+    image: 'cushiony_lip_balm.png',
+    description: 'This creamy, cushiony lip balm softens lips on contact, giving you the TLC your dry lips need. Available in six color tints or a non-tinted version (Creamsicle).',
+    video: michelle_phan_vids[0]
+  },
+  {
+    name: 'Color Facets Sparkling Shadow Top Coat',
+    url: 'http://amzn.to/1jTZqkr',
+    image: 'color_facets.png',
+    description: 'Add more bling to your eyes with this glimmering shadow top coat. Use alone for sheer shimmer, over your shadow to create extra pop, or build up the intensity for even more wow! You\'ll definitely be shining bright like a diamond!',
+    video: michelle_phan_vids[0]
+  }
+])
+
 sona_gasparian = Creator.create(
   name: 'Sona Gasparian',
   twitter: 'simply_sona',
   instagram: 'simplysona',
   youtube_id: 'MakeupBySona',
   bio: 'My name is Sona Gasparian, I\'m a professional makeup artist turned Beauty and Fashion blogger/vlogger based in sunny Los Angeles!',
-  avatar: 'michelle_phan.jpg',
+  avatar: 'sona_gasparian.jpg',
   slug: 'makeupbysona'
 )
 

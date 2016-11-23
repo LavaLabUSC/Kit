@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   # Videos
   get 'video/example_id' => 'videos#example_show'
   get 'video/:id' => 'videos#show'
-  get 'product/example_id' => 'products#show'
+
+  # Products
+  get 'product/example_id' => 'products#example_show'
+  get 'product/:id' => 'products#show'
 
   # Creators
   get 'creator/example_user' => 'creators#example_show'

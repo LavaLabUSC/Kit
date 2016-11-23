@@ -2,30 +2,24 @@
 
 <div class='container'>
   <div class='col-md-6'>
-    <img src='http://placehold.it/640x480' class='img-responsive' />
+    <%= image_tag 'products/' + @product.image, class: 'img-responsive img-thumbnail' %>
+
+    <hr />
+
+    <p><b>Description: </b> <%= @product.description %></p>
   </div>
 
   <div class='col-md-6'>
-    <h2>Product Name</h2>
+    <h2><%= @product.name %></h2>
+
+    <a class='btn btn-primary' href='<%= @product.url %>' target='_blank'>Buy Product</a>
 
     <hr />
 
-    <p><b>Description: </b> Nullam sed turpis at neque sodales malesuada. Duis in consequat justo. Fusce dolor arcu, laoreet sit amet fermentum ut, sollicitudin nec mi. Proin molestie, risus vestibulum aliquet bibendum, felis leo commodo era.</p>
+    <h3>Video</h3>
 
-    <a class='btn btn-primary' href='#'>Buy Product</a>
-
-    <hr />
-
-    <h3>Videos</h3>
-
-    <div class='row'>
-      <div class='col-md-6'>
-        <img src='http://placehold.it/640x480' class='img-responsive'/>
-      </div>
-
-      <div class='col-md-6'>
-        <img src='http://placehold.it/640x480' class='img-responsive' />
-      </div>
-    </div>
+    <%= link_to '/video/' + @product.video.id.to_s do %>
+      <%= image_tag 'https://img.youtube.com/vi/' + @product.video.youtube_id + '/0.jpg', class: 'img-responsive' %>
+    <% end %>
   </div>
 </div>
