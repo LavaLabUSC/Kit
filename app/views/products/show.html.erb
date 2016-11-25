@@ -7,6 +7,13 @@
     <hr />
 
     <p><b>Description: </b> <%= @product.description %></p>
+
+    <% @tags.each do |t| %>
+      <%= link_to '/search/' + t.name do %>
+        <span class='label label-primary'><%= t.name %></span>
+        &nbsp;
+      <% end %>
+    <% end %>
   </div>
 
   <div class='col-md-6'>

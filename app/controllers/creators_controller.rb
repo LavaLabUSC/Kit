@@ -5,6 +5,7 @@ class CreatorsController < ApplicationController
   def show
     @creator = Creator.find_by(:slug => params[:slug])
     @videos = Video.where(:creator => @creator)
+    @tags = @creator.tags
 
     # Get last 4 instagram posts and display it on the page
     ig_data = JSON.load(open('https://www.instagram.com/' + @creator.instagram + '/media/'))

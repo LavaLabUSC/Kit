@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+tags = {
+  fall: Tag.create(name: 'fall'),
+  asian: Tag.create(name: 'asian'),
+  brunette: Tag.create(name: 'brunette')
+}
+
 michelle_phan = Creator.create(
   name: 'Michelle Phan',
   twitter: 'MichellePhan',
@@ -80,3 +86,19 @@ sona_gasparian_vids = Video.create([
     creator: sona_gasparian
   }
 ])
+
+# Create taggings
+Tagging.create(
+  taggable: michelle_phan,
+  tag: tags[:asian]
+)
+
+Tagging.create(
+  taggable: michelle_phan_vids[0],
+  tag: tags[:asian]
+)
+
+Tagging.create(
+  taggable: michelle_phan_vids[0],
+  tag: tags[:brunette]
+)
