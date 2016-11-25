@@ -14,5 +14,9 @@ class CreatorsController < ApplicationController
     for i in 1..4
       @instagram.push(ig_data['items'][i]['images']['standard_resolution']['url'])
     end
+
+    # Get last 3 tweets
+    tweets = $twitter.user_timeline(@creator.twitter)
+    @tweets = tweets[0..4]
   end
 end

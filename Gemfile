@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # FontAwesome icons
 gem 'font-awesome-sass'
+# Allows Kit to check out creator twitter accounts
+gem 'twitter'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -39,6 +41,9 @@ gem 'font-awesome-sass'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  # Use dotenv to store sensitive environment information
+  gem 'dotenv-rails'
 end
 
 group :development do
