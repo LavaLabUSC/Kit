@@ -3,20 +3,20 @@ Rails.application.routes.draw do
   get 'discover' => 'dashboard#discover'
 
   # Videos
-  get 'video/example_id' => 'videos#example_show'
   get 'video/:id' => 'videos#show'
 
   # Products
-  get 'product/example_id' => 'products#example_show'
   get 'product/:id' => 'products#show'
 
   # Creators
-  get 'creator/example_user' => 'creators#example_show'
   get 'creator/:slug' => 'creators#show'
 
   # Search
   post 'search' => 'search#search'
   get 'search/:tag' => 'search#results'
+  get 'search/:tag/videos' => 'search#videos'
+  get 'search/:tag/creators' => 'search#creators'
+  get 'search/:tag/products' => 'search#products'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
