@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   # Creators
   get 'creator/example_user' => 'creators#example_show'
   get 'creator/:slug' => 'creators#show'
+
+  # Search
+  post 'search' => 'search#search'
+  get 'search/:tag' => 'search#results'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
