@@ -2,7 +2,7 @@
 
 <div class='container'>
   <div class='row'>
-    <h2>Creators</h2>
+    <h2><%= link_to 'Creators', '/search/' + @link_thru + '/creators' %></h2>
 
     <% @creators.each do |c| %>
       <div class='col-md-3'>
@@ -16,7 +16,7 @@
   </div>
 
   <div class='row'>
-    <h2>Videos</h2>
+    <h2><%= link_to 'Videos', '/search/' + @link_thru + '/videos' %></h2>
 
     <% @videos.each do |v| %>
       <div class='col-md-3'>
@@ -30,7 +30,7 @@
   </div>
 
   <div class='row'>
-    <h2>Products</h2>
+    <h2><%= link_to 'Products', '/search/' + @link_thru + '/products' %></h2>
 
     <% @products.each do |p| %>
       <div class='col-md-3'>

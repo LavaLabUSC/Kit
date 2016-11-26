@@ -1,0 +1,17 @@
+<%= render 'shared/navbar' %>
+
+<div class='container'>
+  <div class='row'>
+    <h2>Products</h2>
+
+    <% @products.each do |p| %>
+      <div class='col-md-3'>
+        <%= link_to '/product/' + p.id.to_s do %>
+          <%= image_tag 'products/' + p.image, class: 'img-responsive img-thumbnail' %>
+
+          <h3><%= p.name %></h3>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
