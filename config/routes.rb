@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-  get 'discover' => 'dashboard#discover'
+
+  get 'discover' => 'discover#index'
+  get 'discover/recommended' => 'discover#recommended'
 
   # Videos
   get 'video/:id' => 'videos#show'

@@ -1,7 +1,14 @@
 // Styles for the good ole' jumbotron
 .jumbotron {
   margin-top: -20px;
-  padding: 120px 0;
+  padding: 180px 0;
+
+  background: image-url('jumbotron-bg.jpg') center 20%;
+  background-size: cover;
+
+  h1, p {
+    color: #fff;
+  }
 
   @media screen and (max-width: $screen-lg) {
     padding: 100px 0;

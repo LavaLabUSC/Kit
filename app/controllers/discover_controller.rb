@@ -1,9 +1,13 @@
-class DashboardController < ApplicationController
-  def discover
+class DiscoverController < ApplicationController
+  def index
     if current_user
-      render 'discover'
+      render 'index'
     else
       redirect_to '/login', notice: 'Login to discover new content'
     end
+  end
+
+  def recommended
+
   end
 end
