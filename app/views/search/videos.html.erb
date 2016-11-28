@@ -4,14 +4,20 @@
   <div class='row'>
     <h2>Videos</h2>
 
-    <% @videos.each do |v| %>
-      <div class='col-md-3'>
-        <%= link_to '/video/' + v.id.to_s do %>
-          <%= image_tag 'https://img.youtube.com/vi/' + v.youtube_id + '/0.jpg', class: 'img-responsive' %>
+    <% @videos.each_slice(4) do |vids| %>
+      <div class='row'>
+        <% vids.each do |v| %>
+          <div class='col-md-3'>
+            <%= link_to '/video/' + v.id.to_s do %>
+              <%= image_tag 'https://img.youtube.com/vi/' + v.youtube_id + '/0.jpg', class: 'img-responsive' %>
 
-          <h3><%= v.name %></h3>
+              <h3><%= v.name %></h3>
+            <% end %>
+          </div>
         <% end %>
       </div>
+
+      <br />
     <% end %>
   </div>
 </div>

@@ -9,7 +9,7 @@
       <div class='media'>
         <div class='media-left'>
           <%= link_to '/creator/' + @video.creator.slug do %>
-            <%= image_tag 'creators/' + @video.creator.avatar, width: 88, class: 'media-object' %>
+            <%= image_tag 'creators/' + @video.creator.avatar, width: 88, class: 'media-object img-circle' %>
           <% end %>
         </div>
 
@@ -22,50 +22,32 @@
             <b>Tags:</b> 
             
             <% @tags.each do |t| %>
-              <%= link_to '/search/' + t.name do %>
-                <span class='label label-primary'><%= t.name %></span>
+                <span class='label label-primary tag'><%= link_to '/search/' + t.name do %><%= t.name %><% end %></span>
                 &nbsp;
-              <% end %>
             <% end %>
           </p>
         </div>
       </div>
+    </div>
 
-      <hr />
+    <div class='col-md-3 col-md-offset-1'>
+      <h2>Products</h2>
 
-      <h3>Products</h3>
-
-      <div class='row'>
-        <% @products.each do |p| %>
-          <div class='col-md-4'>
+      <% @products.each do |p| %>
+        <div class='row'>
+          <div class='col-md-12'>
             <%= link_to '/product/' + p.id.to_s do %>
               <%= image_tag 'products/' + p.image, class: 'img-responsive img-thumbnail' %>
             <% end %>
 
-            <p style='margin-top: 10px'><b><%= p.name %></b></p>
+            <p style='margin-top: 10px'>
+            <b>
+              <%= link_to p.name, '/product/' + p.id.to_s%>
+            </b>
+            </p>
           </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div class='col-md-3 col-md-offset-1'>
-      <h2>Related</h2>
-
-      <div class='row'>
-        <img src='http://placehold.it/640x480' class='img-responsive'/>
-      </div>
-
-      <br />
-
-      <div class='row'>
-        <img src='http://placehold.it/640x480' class='img-responsive'/>
-      </div>
-
-      <br />
-
-      <div class='row'>
-        <img src='http://placehold.it/640x480' class='img-responsive'/>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

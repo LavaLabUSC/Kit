@@ -13,7 +13,10 @@ class SearchController < ApplicationController
 
     parsed_query.each do |t|
       tag = Tag.find_by(:name => t)
-      tags.push(tag.id)
+
+      if tag
+        tags.push(tag.id)
+      end
     end
 
     # Return videos (and their products) matching tags
@@ -26,8 +29,8 @@ class SearchController < ApplicationController
       products.concat(Product.where(:video => v.taggable))
     end
 
-    @videos = videos.uniq
-    @products = products.uniq
+    @videos = videos.uniq[0..3]
+    @products = products.uniq[0..3]
 
     # Return creators matching tags
     creator_tagging = Tagging.where(:tag => tags, :taggable_type => 'Creator')
@@ -37,7 +40,7 @@ class SearchController < ApplicationController
       creators.push(c.taggable)
     end
 
-    @creators = creators.uniq
+    @creators = creators.uniq[0..3]
 
     @query = parsed_query.join(' ')
     @link_thru = params[:tag]

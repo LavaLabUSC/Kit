@@ -1,46 +1,56 @@
 <%= render 'shared/navbar' %>
 
 <div class='container'>
-  <div class='row'>
-    <h2><%= link_to 'Creators', '/search/' + @link_thru + '/creators' %></h2>
+  <% if !@creators.empty? %>
+    <div class='row'>
+      <h2><%= link_to 'Creators', '/search/' + @link_thru + '/creators' %></h2>
 
-    <% @creators.each do |c| %>
-      <div class='col-md-3'>
-        <%= link_to '/creator/' + c.slug do %>
-          <%= image_tag 'creators/' + c.avatar, class: 'img-responsive img-circle' %>
+      <% @creators.each do |c| %>
+        <div class='col-md-3'>
+          <%= link_to '/creator/' + c.slug do %>
+            <%= image_tag 'creators/' + c.avatar, class: 'img-responsive img-circle' %>
 
-          <h3><%= c.name %></h3>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+            <h3><%= c.name %></h3>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
-  <div class='row'>
-    <h2><%= link_to 'Videos', '/search/' + @link_thru + '/videos' %></h2>
+  <% if !@videos.empty? %>
+    <div class='row'>
+      <h2><%= link_to 'Videos', '/search/' + @link_thru + '/videos' %></h2>
 
-    <% @videos.each do |v| %>
-      <div class='col-md-3'>
-        <%= link_to '/video/' + v.id.to_s do %>
-          <%= image_tag 'https://img.youtube.com/vi/' + v.youtube_id + '/0.jpg', class: 'img-responsive' %>
+      <% @videos.each do |v| %>
+        <div class='col-md-3'>
+          <%= link_to '/video/' + v.id.to_s do %>
+            <%= image_tag 'https://img.youtube.com/vi/' + v.youtube_id + '/0.jpg', class: 'img-responsive' %>
 
-          <h3><%= v.name %></h3>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+            <h3><%= v.name %></h3>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
-  <div class='row'>
-    <h2><%= link_to 'Products', '/search/' + @link_thru + '/products' %></h2>
+  <% if !@products.empty? %>
+    <div class='row'>
+      <h2><%= link_to 'Products', '/search/' + @link_thru + '/products' %></h2>
 
-    <% @products.each do |p| %>
-      <div class='col-md-3'>
-        <%= link_to '/product/' + p.id.to_s do %>
-          <%= image_tag 'products/' + p.image, class: 'img-responsive img-thumbnail' %>
+      <% @products.each do |p| %>
+        <div class='col-md-3'>
+          <%= link_to '/product/' + p.id.to_s do %>
+            <%= image_tag 'products/' + p.image, class: 'img-responsive img-thumbnail' %>
 
-          <h3><%= p.name %></h3>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+            <h3><%= p.name %></h3>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if @products.empty? && @videos.empty? && @creators.empty? %>
+    <h2>Welp. Can't find any content fitting your request! <br/> <small>Try another search like 'brunette' or 'fall'</small></h2>
+  <% end %>
   
 </div>

@@ -4,14 +4,20 @@
   <div class='row'>
     <h2>Products</h2>
 
-    <% @products.each do |p| %>
-      <div class='col-md-3'>
-        <%= link_to '/product/' + p.id.to_s do %>
-          <%= image_tag 'products/' + p.image, class: 'img-responsive img-thumbnail' %>
+    <% @products.each_slice(4) do |products| %>
+      <div class='row'>
+        <% products.each do |p| %>
+          <div class='col-md-3'>
+            <%= link_to '/product/' + p.id.to_s do %>
+              <%= image_tag 'products/' + p.image, class: 'img-responsive img-thumbnail' %>
 
-          <h3><%= p.name %></h3>
+              <h3><%= p.name %></h3>
+            <% end %>
+          </div>
         <% end %>
       </div>
+
+      <br />
     <% end %>
   </div>
 </div>

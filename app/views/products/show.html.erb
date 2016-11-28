@@ -9,10 +9,8 @@
     <p><b>Description: </b> <%= @product.description %></p>
 
     <% @tags.each do |t| %>
-      <%= link_to '/search/' + t.name do %>
-        <span class='label label-primary'><%= t.name %></span>
+        <span class='label label-primary tag'><%= link_to '/search/' + t.name do %><%= t.name %><% end %></span>
         &nbsp;
-      <% end %>
     <% end %>
   </div>
 
