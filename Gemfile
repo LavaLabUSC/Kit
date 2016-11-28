@@ -32,6 +32,9 @@ gem 'twitter'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Use dotenv to store sensitive environment information
+gem 'dotenv-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -41,9 +44,6 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
-  # Use dotenv to store sensitive environment information
-  gem 'dotenv-rails'
 end
 
 group :development do
