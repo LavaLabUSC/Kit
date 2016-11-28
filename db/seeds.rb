@@ -21,12 +21,22 @@ tags = {
   gold: Tag.create(name: 'gold'),
   glitter: Tag.create(name: 'glitter'),
   morning: Tag.create(name: 'morning'),
-  everyday: Tag.create(name: 'everyday')
+  everyday: Tag.create(name: 'everyday'),
+  caucasian: Tag.create(name: 'caucasian'),
+  blonde: Tag.create(name: 'blonde'),
+  blue_eyes: Tag.create(name: 'blue_eyes'),
+  winter: Tag.create(name: 'winter'),
+  black: Tag.create(name: 'black'),
+  curly_hair: Tag.create(name: 'curly_hair'),
+  hair: Tag.create(name: 'hair'),
+  metallic: Tag.create(name: 'metallic'),
+  lips: Tag.create(name: 'lips'),
+  hazel_eyes: Tag.create(name: 'hazel_eyes')
 }
 
 # Vanessa
 vanessa = User.create(
-  email: 'vanessa@kit.usclavalab.org',
+  email: 'vanessa@gmail.com',
   screen_name: 'vanessa',
   display_name: 'Vanessa Qin',
   password_digest: '$2a$10$l7itOlW1REV7R2vo5OhoP.ZUXUXu.QK0vYAYTCCRMPStEr12/5uRa',
@@ -288,6 +298,7 @@ Tagging.create(taggable: michelle_phan_vids[1],tag: tags[:brown_eyes])
 Tagging.create(taggable: sona_gasparian,tag: tags[:brown_eyes])
 Tagging.create(taggable: sona_gasparian,tag: tags[:brunette])
 Tagging.create(taggable: sona_gasparian,tag: tags[:long_hair])
+Tagging.create(taggable: sona_gasparian,tag: tags[:caucasian])
 
 Tagging.create(taggable: sona_gasparian_vids[0],tag: tags[:brown_eyes])
 Tagging.create(taggable: sona_gasparian_vids[0],tag: tags[:brunette])
@@ -410,3 +421,321 @@ Tagging.create(taggable: amyvagabondd_vids[2],tag: tags[:brown_eyes])
 Tagging.create(taggable: amyvagabondd_vids[2],tag: tags[:brunette])
 Tagging.create(taggable: amyvagabondd_vids[2],tag: tags[:long_hair])
 Tagging.create(taggable: amyvagabondd_vids[2],tag: tags[:morning])
+
+# ----
+
+tiffanyd = Creator.create(
+  name: 'Tiffany D',
+  twitter: 'TiffanyLD',
+  instagram: 'makeupbytiffanyd',
+  youtube_id: 'MakeupByTiffanyD',
+  bio: 'One Girl\'s Thoughts on All Things Beauty.',
+  avatar: 'tiffany.jpg',
+  slug: 'makeupbytiffanyd'
+)
+
+Tagging.create(taggable: tiffanyd, tag: tags[:caucasian])
+Tagging.create(taggable: tiffanyd, tag: tags[:blonde])
+Tagging.create(taggable: tiffanyd, tag: tags[:long_hair])
+Tagging.create(taggable: tiffanyd, tag: tags[:blue_eyes])
+
+tiffanyd_vids = Video.create([
+  {
+    name: 'Cold Weather Must-Haves (Makeup, Skin, Hair)',
+    youtube_id: 'djKe0052sXA',
+    creator: tiffanyd
+  },
+  {
+    name: 'The Only Makeup Brushes I Need',
+    youtube_id: '9fVF7nnXWpE',
+    creator: tiffanyd
+  },
+  {
+    name: 'Fall Makeup Tutorial & Haul',
+    youtube_id: 'tx4Ta_xH2EM',
+    creator: tiffanyd
+  }
+])
+
+tiffanyd_vids.each do |v|
+  Tagging.create(taggable: v, tag: tags[:caucasian])
+  Tagging.create(taggable: v, tag: tags[:blonde])
+  Tagging.create(taggable: v, tag: tags[:long_hair])
+  Tagging.create(taggable: v, tag: tags[:blue_eyes])
+end
+
+Tagging.create(taggable: tiffanyd_vids[0], tag: tags[:winter])
+Tagging.create(taggable: tiffanyd_vids[2], tag: tags[:fall])
+
+# ----
+
+alyssa_forever = Creator.create(
+  name: 'Alyssa Forever',
+  twitter: 'foreverflawlyss',
+  instagram: 'foreverflawlyss',
+  youtube_id: 'CurlyByNature21',
+  bio: 'I make videos on all things that inspire me, focusing on beauty, fashion, and lifestyle. All the products you see on my channel are things I have tried and truly believe in. I hope to bring you the best dupes, hauls, tutorials, vlogs, lookbooks, tips and tricks that I can, because I know its hard out here girl! I hope you like my videos. Please don\'t be shy! Leave a comment and let me know what you think as long as it\'s nice, you know God don\'t like ugly!',
+  avatar: 'alyssa.jpg',
+  slug: 'foreverflawlyss'
+)
+
+Tagging.create(taggable: alyssa_forever, tag: tags[:black])
+Tagging.create(taggable: alyssa_forever, tag: tags[:curly_hair])
+Tagging.create(taggable: alyssa_forever, tag: tags[:brown_eyes])
+
+alyssa_forever_vids = Video.create([
+  {
+    name: 'Lazy Hairstyles for Curly Hair',
+    youtube_id: 'HRcVvbD8p1c',
+    creator: alyssa_forever
+  },
+  {
+    name: 'EASY GLAM! Rose Gold Liner + Lips',
+    youtube_id: 'VGysecPTY60',
+    creator: alyssa_forever
+  },
+  {
+    name: 'Smoky Eye Makeup for Beginners',
+    youtube_id: '3CinJF6U0Oo',
+    creator: alyssa_forever
+  }
+])
+
+alyssa_forever_vids.each do |v|
+  alyssa_tags = Tagging.where(:taggable => alyssa_forever)
+
+  alyssa_tags.each do |t|
+    Tagging.create(taggable: v, tag: t.tag)
+  end
+end
+
+Tagging.create(taggable: alyssa_forever_vids[0], tag: tags[:hair])
+Tagging.create(taggable: alyssa_forever_vids[2], tag: tags[:eye])
+
+# ----
+
+jennie_jenkins = Creator.create(
+  name: 'Jennie Jenkins',
+  twitter: 'TheBeautybyJJ',
+  instagram: 'thejenniejenkins',
+  youtube_id: 'beautybyjj',
+  bio: 'Hey guys! This channel is going to show you what i love..from make up looks/tutorials to beauty to fashion and anything else i feel like sharing...Hope you enjoy! :) xx',
+  avatar: 'jennie.jpg',
+  slug: 'beautybyjj'
+)
+
+Tagging.create(taggable: jennie_jenkins, tag: tags[:black])
+Tagging.create(taggable: jennie_jenkins, tag: tags[:long_hair])
+Tagging.create(taggable: jennie_jenkins, tag: tags[:curly_hair])
+Tagging.create(taggable: jennie_jenkins, tag: tags[:brown_eyes])
+
+jennie_jenkins_vids = Video.create([
+  {
+    name: 'Top Highlighters, Faves, & High End Dupes',
+    youtube_id: '3QxH1LAH0PM',
+    creator: jennie_jenkins
+  },
+  {
+    name: 'Full Face Using Makeup Under £10',
+    youtube_id: 'jRtm3OsD7RY',
+    creator: jennie_jenkins
+  },
+  {
+    name: '11 Autumn/Fall Lip Swatches',
+    youtube_id: 'QUmh2WvFvYw',
+    creator: jennie_jenkins
+  }
+])
+
+jennie_jenkins_vids.each do |v|
+  jennie_tags = Tagging.where(:taggable => jennie_jenkins)
+
+  jennie_tags.each do |t|
+    Tagging.create(taggable: v, tag: t.tag)
+  end
+end
+
+Tagging.create(taggable: jennie_jenkins_vids[2], tag: tags[:fall])
+
+# ----
+
+lizzie_loves = Creator.create(
+  name: 'Lizzie Loves',
+  twitter: 'Lizzieloves_x',
+  instagram: 'Lizzieloves.x',
+  youtube_id: 'UCIu9NYjKtfJCn8ZhwSNA_og',
+  bio: 'Hey I\'m Lizzie i\'m a 22 year old from London! I make Beauty & Lifestyle Videos and upload them on Wednesdays & Sundays for your viewing pleasure. I love empowering and connecting with young women so I decided to make a YouTube Channel!! Please remember to Subscribe ! x x',
+  avatar: 'lizzie.jpg',
+  slug: 'lizzieloves'
+)
+
+Tagging.create(taggable: lizzie_loves, tag: tags[:black])
+Tagging.create(taggable: lizzie_loves, tag: tags[:long_hair])
+Tagging.create(taggable: lizzie_loves, tag: tags[:curly_hair])
+Tagging.create(taggable: lizzie_loves, tag: tags[:brown_eyes])
+
+lizzie_loves_vids = Video.create([
+  {
+    name: '6 Back to School Quick Natural Hairstyles for Short/Medium Hair',
+    youtube_id: '_tbFf7_evN0',
+    creator: lizzie_loves
+  },
+  {
+    name: 'Autumn/Fall Vamp/Brown Makeup Tutorial',
+    youtube_id: 'mwIelz9nt_I',
+    creator: lizzie_loves
+  },
+  {
+    name: 'Full Face Winter Glam for Dark Skin',
+    youtube_id: 'LJtHbEaKY70',
+    creator: lizzie_loves
+  }
+])
+
+lizzie_loves_vids.each do |v|
+  lizzie_tags = Tagging.where(:taggable => lizzie_loves)
+
+  lizzie_tags.each do |t|
+    Tagging.create(taggable: v, tag: t.tag)
+  end
+end
+
+Tagging.create(taggable: lizzie_loves_vids[0], tag: tags[:hair])
+Tagging.create(taggable: lizzie_loves_vids[1], tag: tags[:fall])
+Tagging.create(taggable: lizzie_loves_vids[2], tag: tags[:winter])
+
+# ----
+
+patricia_bright = Creator.create(
+  name: 'Patricia Bright',
+  twitter: 'PattyOLovesU',
+  instagram: 'thepatriciabright',
+  youtube_id: 'BritPopPrincess',
+  bio: 'A Female fashion beauty and hair channel with tutorials and videos to help with your beauty and fashion needs.',
+  avatar: 'patricia.jpg',
+  slug: 'patriciabright'
+)
+
+Tagging.create(taggable: patricia_bright, tag: tags[:black])
+Tagging.create(taggable: patricia_bright, tag: tags[:long_hair])
+Tagging.create(taggable: patricia_bright, tag: tags[:brown_eyes])
+
+patricia_bright_vids = Video.create([
+  {
+    name: 'Battle of the Mettalic Liquid Lipsticks',
+    youtube_id: 'Ttqt5thie5g',
+    creator: patricia_bright
+  },
+  {
+    name: 'My Current Favourite Face - Everyday Makeup',
+    youtube_id: 'bq3vK7EPUXM',
+    creator: patricia_bright
+  }
+])
+
+patricia_bright_vids.each do |v|
+  bright_tags = Tagging.where(:taggable => patricia_bright)
+
+  bright_tags.each do |t|
+    Tagging.create(taggable: v, tag: t.tag)
+  end
+end
+
+Tagging.create(taggable: patricia_bright_vids[0], tag: tags[:metallic])
+Tagging.create(taggable: patricia_bright_vids[0], tag: tags[:lips])
+Tagging.create(taggable: patricia_bright_vids[1], tag: tags[:everyday])
+
+# ----
+
+brittney = Creator.create(
+  name: 'Brittney Lee Saunders',
+  twitter: 'britt_saunders',
+  instagram: 'brittney_saunders',
+  youtube_id: 'beautybybrittneyx',
+  bio: 'My name is Brittney Lee Saunders and welcome to my channel! You\'ll find a bunch of really random stuff here from hauls to makeup videos, to parodies and skits, vlogs, story telling videos and so much more! I upload 3 times a week so if you like my videos make sure to subscribe to stay updated :)',
+  avatar: 'brittney.jpg',
+  slug: 'beautybybrittneyx'
+)
+
+Tagging.create(taggable: brittney, tag: tags[:caucasian])
+Tagging.create(taggable: brittney, tag: tags[:blonde])
+Tagging.create(taggable: brittney, tag: tags[:long_hair])
+Tagging.create(taggable: brittney, tag: tags[:hazel_eyes])
+
+brittney_vids = Video.create([
+  {
+    name: 'Instagram Girl Makeup Tutorial',
+    youtube_id: 'oufKEQPft3U',
+    creator: brittney
+  },
+  {
+    name: 'Lip Swatches + First Impressions',
+    youtube_id: 'gjOWIVr5dp0',
+    creator: brittney
+  }
+])
+
+brittney_vids.each do |v|
+  britt_tags = Tagging.where(:taggable => brittney)
+
+  britt_tags.each do |t|
+    Tagging.create(taggable: v, tag: t.tag)
+  end
+end
+
+Tagging.create(taggable: brittney_vids[1], tag: tags[:lips])
+
+# ----
+
+lauren_curtis = Creator.create(
+  name: 'Lauren Curtis',
+  twitter: 'lozcurtis',
+  instagram: 'lozcurtis',
+  youtube_id: 'laurenbeautyy',
+  bio: 'This channel is centred around all things beauty - from makeup and hair tutorials to product reviews and hauls - I\'ve got everything covered!',
+  avatar: 'lauren.jpg',
+  slug: 'lozcurtis'
+)
+
+Tagging.create(taggable: lauren_curtis, tag: tags[:caucasian])
+Tagging.create(taggable: lauren_curtis, tag: tags[:blonde])
+Tagging.create(taggable: lauren_curtis, tag: tags[:long_hair])
+Tagging.create(taggable: lauren_curtis, tag: tags[:blue_eyes])
+
+lauren_vids = Video.create([
+  {
+    name: 'Vampy Fall Makeup Tutorial',
+    youtube_id: 'e2RbGhxa9so',
+    creator: lauren_curtis
+  },
+  {
+    name: 'Gym Makeup Tutorial / Fresh Everyday Look',
+    youtube_id: 'jpbUItVXzMY',
+    creator: lauren_curtis
+  },
+  {
+    name: 'Gold Glam Winged Liner & Bronzed Skin Tutorial',
+    youtube_id: 'h_zs7nzeu9k',
+    creator: lauren_curtis
+  }
+])
+
+lauren_vids.each do |v|
+  lauren_tags = Tagging.where(:taggable => lauren_curtis)
+
+  lauren_tags.each do |t|
+    Tagging.create(taggable: v, tag: t.tag)
+  end
+end
+
+Tagging.create(taggable: lauren_vids[0], tag: tags[:fall])
+Tagging.create(taggable: lauren_vids[1], tag: tags[:everyday])
+Tagging.create(taggable: lauren_vids[2], tag: tags[:gold])
+
+# ----
+
+Subscription.create(:user_id => 1, :creator_id => 1)
+Subscription.create(:user_id => 1, :creator_id => 2)
+Subscription.create(:user_id => 1, :creator_id => 4)
+Subscription.create(:user_id => 1, :creator_id => 5)
+
