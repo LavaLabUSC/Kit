@@ -4,3 +4,29 @@
     color: #fff;
   }
 }
+
+.results {
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.6em;
+    border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 5px;
+
+    color: lighten(#b82761, 15%);
+
+    a {
+      color: lighten(#b82761, 15%);
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: darken(#b82761, 15%)
+    }
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 1.4em; 
+    font-weight: 400;
+  }
+}

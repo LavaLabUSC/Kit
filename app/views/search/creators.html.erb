@@ -1,15 +1,19 @@
 <%= render 'shared/navbar' %>
 
-<div class='container'>
+<div class='container results'>
   <div class='row'>
     <h2>Creators</h2>
 
-    <% @creators.each do |c| %>
-      <div class='col-md-3'>
-        <%= link_to '/creator/' + c.slug do %>
-          <%= image_tag 'creators/' + c.avatar, class: 'img-responsive img-circle' %>
+    <% @creators.each_slice(4) do |creators| %>
+      <div class='row'>
+        <% creators.each do |c| %>
+          <div class='col-md-3'>
+            <%= link_to '/creator/' + c.slug do %>
+              <%= image_tag 'creators/' + c.avatar, class: 'img-responsive img-circle' %>
 
-          <h3><%= c.name %></h3>
+              <h3><%= c.name %></h3>
+            <% end %>
+          </div>
         <% end %>
       </div>
     <% end %>
