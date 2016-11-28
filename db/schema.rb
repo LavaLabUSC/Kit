@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126194617) do
+ActiveRecord::Schema.define(version: 20161127233918) do
 
   create_table "creators", force: :cascade do |t|
     t.string   "name"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20161126194617) do
 
   add_index "products", ["video_id"], name: "index_products_on_video_id"
 
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "creator_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "subscriptions", ["creator_id"], name: "index_subscriptions_on_creator_id"
+  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id"
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "taggable_id"
     t.string   "taggable_type"
@@ -54,6 +64,8 @@ ActiveRecord::Schema.define(version: 20161126194617) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "screen_name"
@@ -61,6 +73,8 @@ ActiveRecord::Schema.define(version: 20161126194617) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "avatar"
+    t.text     "bio"
   end
 
   create_table "videos", force: :cascade do |t|

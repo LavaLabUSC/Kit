@@ -7,7 +7,15 @@
         <%= image_tag 'creators/' + @creator.avatar, width: 100, class: 'media-object img-circle pull-left', style: 'margin-right: 15px' %>
 
         <div>
-          <h3 style='margin: 0 0 10px'><%= @creator.name %></h3>
+          <h3 style='margin: 0 0 10px'>
+            <%= @creator.name %>
+
+             <% if @sub_exists %>
+                <a href='/creator/<%= @creator.slug %>/subscribe' class='btn btn-sm btn-default'>Unsubscribe</a>
+              <% else %>
+                <a href='/creator/<%= @creator.slug %>/subscribe' class='btn btn-sm btn-primary'>Subscribe</a>
+              <% end %>
+          </h3>
 
           <p><%= @creator.bio %></p>
 

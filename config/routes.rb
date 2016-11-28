@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   # Creators
   get 'creator/:slug' => 'creators#show'
+  get 'creator/:slug/subscribe' => 'creators#subscribe'
 
+  # Subscriptions
+  get 'subscriptions' => 'subscriptions#show'
+  
   # Search
   post 'search' => 'search#search'
   get 'search/:tag' => 'search#results'
